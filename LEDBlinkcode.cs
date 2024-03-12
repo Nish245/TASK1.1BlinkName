@@ -2,7 +2,7 @@ const int buttonPin = 2; // Pin connected to the push button
 const int ledPin = 13;   // Pin connected to the LED
 
 
-const char* morseCode[] = {"-.", "..", "...", ".-", "-.","-"}; 
+const char* morseCode[] = {"-.", "..", "...", ".-", "-.","-"}; // Name: NISHANT  
 
 void setup() {
   pinMode(buttonPin, INPUT); // Set the push button pin as input
