@@ -4,12 +4,12 @@ const int ledPin = 13;   // Pin connected to the LED
 const char* morseCode[] = {"-.", "..", "...", ".-", "-.", "-"};
 
 void setup() {
-  pinMode(buttonPin, INPUT); // Set the push button pin as input
-  pinMode(ledPin, OUTPUT);   // Set the LED pin as output
+  pinMode(buttonPin, INPUT);
+  pinMode(ledPin, OUTPUT);  
 }
 
 void loop() {
-  if (digitalRead(buttonPin) == HIGH) { // Check if the push button is pressed
+  if (digitalRead(buttonPin) == HIGH) { 
     blinkName(); // Start blinking the name in Morse code
   }
 }
@@ -24,9 +24,9 @@ void blinkName() {
         blinkDash();
       }
     }
-    delay(500); // Inter-letter gap
+    delay(500); 
   }
-  delay(1000); // Wait for one second after completing the blink cycle
+  delay(1000);
 }
 
 void blinkDot() {
