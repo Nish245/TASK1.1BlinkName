@@ -1,8 +1,7 @@
 const int buttonPin = 2; // Pin connected to the push button
 const int ledPin = 13;   // Pin connected to the LED
 
-
-const char* morseCode[] = {"-.", "..", "...", ".-", "-.","-"}; // Name: NISHANT  
+const char* morseCode[] = {"-.", "..", "...", ".-", "-.", "-"};
 
 void setup() {
   pinMode(buttonPin, INPUT); // Set the push button pin as input
@@ -20,18 +19,27 @@ void blinkName() {
     const char* letter = morseCode[i];
     for (int j = 0; letter[j] != '\0'; j++) {
       if (letter[j] == '.') {
-        digitalWrite(ledPin, HIGH); // Turn on the LED for dot
-        delay(250); // Dot duration
-        digitalWrite(ledPin, LOW); // Turn off the LED
-        delay(250); // Inter-element gap
+        blinkDot();
       } else if (letter[j] == '-') {
-        digitalWrite(ledPin, HIGH); // Turn on the LED for dash
-        delay(750); // Dash duration
-        digitalWrite(ledPin, LOW); // Turn off the LED
-        delay(250); // Inter-element gap
+        blinkDash();
       }
     }
     delay(500); // Inter-letter gap
   }
-  delay(1000);
+  delay(1000); // Wait for one second after completing the blink cycle
 }
+
+void blinkDot() {
+  digitalWrite(ledPin, HIGH); // Turn on the LED for dot
+  delay(250); // Dot duration
+  digitalWrite(ledPin, LOW); // Turn off the LED
+  delay(250); // Inter-element gap
+}
+
+void blinkDash() {
+  digitalWrite(ledPin, HIGH); // Turn on the LED for dash
+  delay(750); // Dash duration
+  digitalWrite(ledPin, LOW); // Turn off the LED
+  delay(250); // Inter-element gap
+}
+
